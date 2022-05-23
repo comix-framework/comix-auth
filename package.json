@@ -1,13 +1,12 @@
 {
   "name": "@comico/auth",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Comix auth module",
   "author": "Yuan",
   "license": "MIT",
   "main": "dist/libs/auth/index.js",
   "scripts": {
     "build": "nest build auth --tsc",
-    "publish": "npm run build && npm publish",
     "dev": "nest start --tsc --watch"
   },
   "keywords": [

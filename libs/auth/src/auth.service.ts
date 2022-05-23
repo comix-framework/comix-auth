@@ -5,8 +5,8 @@ import { ClientProxy } from '@nestjs/microservices'
 @Injectable()
 export class AuthService {
   constructor(
-    private jwtService: JwtService,
-    @Inject('AUTH_SERVICE') private client: ClientProxy
+    readonly jwtService: JwtService,
+    @Inject('AUTH_SERVICE') readonly client: ClientProxy
   ) {}
 
   async JWTVerify(id: string): Promise<any> {
