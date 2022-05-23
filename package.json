@@ -1,6 +1,6 @@
 {
   "name": "@comixjs/auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Comix auth module",
   "author": "Yuan",
   "license": "MIT",
@@ -13,6 +13,10 @@
     "auth",
     "nestjs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comix-app/comix-auth"
+  },
   "devDependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.0.1",
