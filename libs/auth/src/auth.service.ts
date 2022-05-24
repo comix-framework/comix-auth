@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { ClientProxy } from '@nestjs/microservices'
+import { first, lastValueFrom } from 'rxjs'
 
 @Injectable()
 export class AuthService {
@@ -10,7 +11,10 @@ export class AuthService {
   ) {}
 
   async JWTVerify(id: string): Promise<any> {
-    this.client.emit('user:verifyJWT', { token: '1234' })
-    return { _id: '123' }
+    try {
+      return lastValueFrom(
+        this.client.emit('user:verifyJWT', { id }).pipe(first())
+      )
+    } catch (e) {}
   }
 }
